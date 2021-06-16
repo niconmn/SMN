@@ -7,13 +7,14 @@ La estacion entrega por puerto serie un dato cada 5 minutos. Por ejemplo:
 DATE,TIME,WD_5s,WS_5s_KT,WG_3s_KT,AT_5s_C,RH_5s,BP1_5s_Mb,BP2_5s_Mb,BP3_5s_Mb,PP_24h_Mm,PP_30s_Mm,SR1mW/m2,BIT,WS_STAT,V_DC,dirwave10,spdwave10,dirwMax5,SpdwMax5,BP1_5s_Mb,PP_30s_Mm,Pp3hs,AT_5s_C,dewPoint,tempMax5,Tempmin5,SR1mW/m2,radMax5,radmin5,V_DC,
 19/03/09,03:19:56,0,///,0.0,3.3,56,758.7,758.7,758.7,0.000,0.000,-3,8,///,11.9,0,0.0,0,0.0,758.7,0.000,0.000,3.3,-4.5,3.5,3.3,-3,-2,-3,11.9,
 
-Esa lista de datos contiene varios inconvenientes:
+Actualmente la conexion con la estacion se realiza por VPN. La bajada de datos se realiza con la ayuda de un programa para crear un puerto COM virtual. Se accede a la estacion con otro programa (Terminal) y se descargan todos los datos desde la anterior bajada.
+
+La lista de datos descargados contiene varios inconvenientes:
 - datos repetidos
 - datos de sensores que no estan instalados
 - complejidad para entender el encabezado de los datos
 
 Para facilitar el manejo de los datos se desarrolló un programa en lenguaje Python que realiza diversas tareas sobre los datos:
-
 - abre los datos bajados de la estación
 - acomoda las columnas segun el tipo de dato (temperatura, viento, presion, etc)
 - convierte los datos de velocidad de viento (nudos a km/h)
